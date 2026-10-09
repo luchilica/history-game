@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: history-game
+    runtime: static
+    staticPublishPath: ./Build
+    headers:
+      - path: /Build/*.wasm.gz
+        name: Content-Encoding
+        value: gzip
+      - path: /Build/*.wasm.gz
+        name: Content-Type
+        value: application/wasm
+      - path: /Build/*.data.gz
+        name: Content-Encoding
+        value: gzip
+      - path: /Build/*.js.gz
+        name: Content-Encoding
+        value: gzip
+      - path: /Build/*.js.gz
+        name: Content-Type
+        value: application/javascript
